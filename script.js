@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const otherIcon = otherBody.querySelector('.preview-header i');
                 const otherPreviewHeader = otherBody.querySelector('.preview-header')
 
-                otherPreviewBody.classList.remove('open');
+                otherPreviewBody.classList.remove('open-faq');
                 otherPreviewHeader.classList.remove('blue')
                 otherIcon.classList.remove('fa-xmark');
                 otherIcon.classList.add('fa-plus');
@@ -44,3 +44,45 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+// FAQ
+document.addEventListener('DOMContentLoaded', () => {
+    const faqContainer = document.querySelector('.faq-content');
+
+    faqContainer.addEventListener('click', (e) => {
+        const faqHeader = e.target.closest('.faq-group-header');
+
+        if (!faqHeader) return;
+
+        const faq = faqHeader.parentElement;
+        const faqBody = faq.querySelector('.faq-group-body');
+        const icon = faqHeader.querySelector('i');
+
+        // Toggle icon
+        icon.classList.toggle('fa-angle-down');
+        icon.classList.toggle('fa-angle-up');
+
+        // Toggle body
+        faqBody.classList.toggle('open-faq');
+
+        // Header color
+        faqHeader.classList.toggle('blue')
+
+        // Close the other bodies
+        const otherBodies = faqContainer.querySelectorAll('.faq-content');
+
+
+        otherBodies.forEach((otherBody) => {
+            if (otherBody !== faq) {
+                const otherFaqBody = otherBody.querySelector('.faq-group-body');
+                const otherIcon = otherBody.querySelector('.faq-group-header i');
+                const otherFaqHeader = otherBody.querySelector('.faq-group-header')
+
+                otherFaqBody.classList.remove('open-faq');
+                otherFaqHeader.classList.remove('blue')
+                otherIcon.classList.remove('fa-angle-up');
+                otherIcon.classList.add('fa-angle-down');
+
+            }
+        })
+    })
+})
