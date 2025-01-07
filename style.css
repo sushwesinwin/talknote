@@ -11,7 +11,7 @@
 html {
     font-family: "Inter", serif;
     /* font-family: "Poppins", serif; */
-
+    scroll-behavior: smooth;
 }
 
 body {
@@ -161,7 +161,6 @@ img {
     color: #6b7280;
     font-weight: 500;
     gap: 24px;
-    transition: all ease 0.15s;
 }
 
 .navbar .main-menu ul li a:hover {
@@ -225,6 +224,60 @@ img {
     color: #111827;
 }
 
+.small-screen-container {
+    line-height: 36px;
+}
+
+.small-screen-menu {
+    display: none;
+}
+
+.small-screen-menu.active {
+    display: block;
+}
+
+
+.small-screen-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 16px;
+    padding: 16px 16px 48px 16px;
+}
+
+.small-screen-menu ul li a {
+    color: var(--dark-gray);
+}
+
+.small-screen-menu ul button {
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter';
+}
+
+.small-screen-menu ul button i {
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.small-screen-menu ul :nth-child(6) {
+    background: #4546e5;
+    color: #fff;
+    margin-top: 24px;
+}
+
+.small-screen-menu ul :nth-child(7) {
+    background: #eef2ff;
+    color: #4338ca;
+}
+
+
+
 /* Navbar Media Queries */
 
 @media (max-width: 1200px) {
@@ -238,7 +291,7 @@ img {
         display: none;
     }
 
-    .navbar .container .nav-btn {
+    .navbar .nav-btn {
         display: none;
     }
 
@@ -248,6 +301,11 @@ img {
 
     .hamburger-btn {
         display: block;
+    }
+
+    .small-screen-menu button {
+        display: block;
+        width: 100%;
     }
 
 }
@@ -609,8 +667,6 @@ img {
 }
 
 
-
-
 @media (max-width: 1200px) {
     .hero .hero-flex {
         display: flex;
@@ -627,6 +683,10 @@ img {
 
     .hero .flexbox-1 .hero-btn .demo-btn {
         display: block;
+    }
+
+    .hero .org {
+        flex-wrap: wrap;
     }
 }
 
@@ -657,8 +717,6 @@ img {
     }
 
 }
-
-
 
 /* Why choose */
 
@@ -730,12 +788,13 @@ img {
 /* How it works */
 .how-it-works {
     background: #eef2ff;
-    padding: 96px 24px;
+    padding: 96px 48px;
+    display: flex;
+    justify-content: center;
 }
 
 .how-it-works .container {
     max-width: 1000px;
-    margin: auto;
 }
 
 .how-it-works .container .heading {
@@ -765,20 +824,17 @@ img {
 
 .how-it-works .container .preview .flex-container {
     display: flex;
-    column-gap: 64px;
-    row-gap: 64px;
+    gap: 64px;
     line-height: 24px;
-    width: 1000px;
+    width: 100%;
     height: 351.2px;
-
+    width: 1000px;
 }
 
 .how-it-works .container .preview .flex-container .flexbox-1 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 468px;
+    flex: 1;
 }
 
 .how-it-works .flex-container .flexbox-2 video {
@@ -802,7 +858,6 @@ img {
     display: flex;
     justify-content: space-between;
     font-size: 18px;
-
 }
 
 .blue {
@@ -833,12 +888,21 @@ img {
 }
 
 @media (max-width:1200px) {
+    .how-it-works .container {
+        max-width: 100%;
+    }
+
+    .how-it-works .container .preview .flex-container {
+        width: 100%;
+    }
+
     .how-it-works .container .preview .flex-container .flexbox-2 {
         display: none;
     }
 
-    .how-it-works .container .preview .flex-container .flexbox-1 {
-        width: 585.6px;
+    .how-it-works .container .preview-btn {
+        display: block;
+        max-width: 100%;
     }
 }
 
@@ -889,7 +953,6 @@ img {
 
 .details :last-child {
     color: rgb(156, 163, 175);
-
 }
 
 .review-para {

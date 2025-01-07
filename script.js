@@ -25,16 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const otherBodies = container.querySelectorAll('.preview-content');
 
 
-
-
-
         otherBodies.forEach((otherBody) => {
             if (otherBody !== preview) {
                 const otherPreviewBody = otherBody.querySelector('.preview-body');
                 const otherIcon = otherBody.querySelector('.preview-header i');
                 const otherPreviewHeader = otherBody.querySelector('.preview-header')
 
-                otherPreviewBody.classList.remove('open-faq');
+                otherPreviewBody.classList.remove('open');
                 otherPreviewHeader.classList.remove('blue')
                 otherIcon.classList.remove('fa-xmark');
                 otherIcon.classList.add('fa-plus');
@@ -85,4 +82,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     })
+})
+
+// small screen menu
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerButton = document.querySelector('.hamburger-btn');
+    const smallScreenMenu = document.querySelector('.small-screen-menu');
+    const menuIcon = document.querySelector('.hamburger-btn i');
+    const menuContent = document.querySelector('span')
+
+    hamburgerButton.addEventListener('click', () => {
+        smallScreenMenu.classList.toggle('active');
+        const isClose = menuIcon.classList.toggle('fa-xmark');
+
+        menuContent.textContent = isClose ? "Close" : "Menu";
+    })
+
+    const smallScreenMenuItems = document.querySelectorAll('.small-screen-menu ul li');
+
+    smallScreenMenuItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            smallScreenMenu.classList.remove('active');
+
+            const isClose = menuIcon.classList.toggle('fa-xmark');
+
+            menuContent.textContent = isClose ? "Close" : "Menu";
+        });
+    });
+
+
 })

@@ -14,15 +14,50 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="container">
-            <!-- logo -->
-            <div class="logo">
-                <a href="#">
-                    <img src="images/logo-color.png" alt="talknote-logo">
-                </a>
+        <div class="small-screen-container">
+            <div class="container">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="#">
+                        <img src="images/logo-color.png" alt="talknote-logo">
+                    </a>
+                </div>
+
+                <!-- main-menu -->
+                <div class="main-menu">
+                    <ul>
+                        <li>
+                            <a href="#tryit">Try it</a>
+                        </li>
+                        <li>
+                            <a href="#howitwoks">How it works</a>
+                        </li>
+                        <li>
+                            <a href="#usecases">Use cases</a>
+                        </li>
+                        <li>
+                            <a href="#pricing">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="#faq">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Hamgurger btn -->
+                <button class="hamburger-btn">
+                    <i class="fa-solid fa-bars" style="color: #bababa;"></i>
+                    <span>Menu</span>
+                </button>
+                <!-- button -->
+                <div class="nav-btn">
+                    <button>Login</button>
+                    <button>
+                        <i class="fa-solid fa-arrow-right"></i><span>Get Talknotes +</span>
+                    </button>
+                </div>
             </div>
-            <!-- main-menu -->
-            <div class="main-menu">
+
+            <div class="small-screen-menu">
                 <ul>
                     <li>
                         <a href="#tryit">Try it</a>
@@ -39,25 +74,18 @@
                     <li>
                         <a href="#faq">FAQ</a>
                     </li>
+                    <button class="btn">
+                        <i class="fa-solid fa-arrow-right"></i><span>Get Talknotes +</span>
+                    </button>
+                    <button class="btn"><i class="fa-solid fa-angle-right" style="color: #454fe5;"></i>Login</button>
                 </ul>
             </div>
-            <!-- Hamgurger btn -->
-            <button class="hamburger-btn">
-                <i class="fa-solid fa-bars" style="color: #bababa;"></i>
-                <span>Menu</span>
-            </button>
-            <!-- button -->
-            <div class="nav-btn">
-                <button>Login</button>
-                <button>
-                    <i class="fa-solid fa-arrow-right"></i><span>Get Talknotes +</span>
-                </button>
-            </div>
+
         </div>
     </nav>
 
     <!-- Hero -->
-    <main class="hero">
+    <main class="hero" id="tryit">
 
         <div class="hero-flex">
             <!-- flexbox-1 -->
@@ -235,7 +263,7 @@
     </section>
 
     <!-- How it works -->
-    <section class="how-it-works">
+    <section class="how-it-works" id="howitwoks">
         <div class="container">
             <div class="headers">
                 <h2 class="main-heading">How it works</h2>
@@ -352,7 +380,7 @@
     </section>
 
     <!-- Use cases -->
-    <section class="use-cases">
+    <section class="use-cases" id="usecases">
         <div class="container">
             <div class="headers">
                 <h2 class="main-heading">Use cases</h2>
@@ -617,7 +645,7 @@
     </section>
 
     <!-- Pricing -->
-    <section class="pricing">
+    <section class="pricing" id="pricing">
         <div class="container">
             <div class="headers">
                 <h2 class="main-heading">Pricing</h2>
@@ -736,7 +764,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="container">
             <div class="faq-menu">
                 <h2>F.A.Q</h2>
